@@ -20,13 +20,16 @@ def get_word_score(word):
     '''
     return the score for the word according the letter scores
     '''
-    # score = sum([v for v in letter_scores[k] for k in word.lower()])
-    # @gocher, Why isn't this working? thx.
+    return sum([letter_scores[k] for k in word.lower()])
+    # @gocher, Why isn't this working? thx. 
+    # managed to fix it. Still indentation is a mess. 
+    # using the phone. 
+
     # return score
-    score=0
-    for c in word.lower():
-        score += letter_scores[c]
-    return score
+   # score=0
+   # for c in word.lower():
+   #     score += letter_scores[c]
+   # return score
 
 # main program
 while True:
