@@ -14,8 +14,9 @@ if len(sys.argv) != 2:
 
 try:
     with open(sys.argv[1], 'r') as f:
-        for i in range(10):
-            print(f.readline().strip())
+        lines = [line for line in f.readlines() if len(line.strip())]
+            for line in lines[-10:]:
+                print(line)
 except FileNotFoundError:
     sys.exit("File not found")
 except:
