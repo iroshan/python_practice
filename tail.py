@@ -7,6 +7,7 @@ Display an appropriate error message if the file requested by the user does not 
 '''
 
 import sys
+from collections import deque
 
 if len(sys.argv) != 2:
     sys.exit("Please privide the file name as argument")
@@ -14,9 +15,7 @@ if len(sys.argv) != 2:
 
 try:
     with open(sys.argv[1], 'r') as f:
-        lines = [line for line in f.readlines() if len(line.strip())]
-        for line in lines[-10:]:
-        	print(line)
+    	 print("\n".join(deque( f,10)))
 except FileNotFoundError:
     sys.exit("File not found")
 except:
