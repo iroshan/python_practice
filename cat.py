@@ -19,5 +19,5 @@ for arg in sys.argv[1:]:
             for line in f.readlines():
                 print(line)
     except Exception as e:
-        print(f"Cannot process {arg}. {e}")
+        print(f"\n Cannot process {arg}.\n{e}\n\n")
         continue
