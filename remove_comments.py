@@ -20,8 +20,11 @@ def remove_comments():
         with open(read_file, 'r') as r:
             with open(write_file, 'w') as w:
                 for line in r:
-                    if not line.startswith('#'):
-                        w.write(line)
+                    if line.startswith('#'):
+                        continue
+                    if '#' in line:
+                        line = line[:line.index('#')] + '\n'
+                    w.write(line)
                 print("comments removal complete.")
     except Exception as e:
         print(
