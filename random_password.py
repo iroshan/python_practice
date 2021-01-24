@@ -43,7 +43,10 @@ def main():
     ''')
     f = input("file name: ").strip()
     if f:
-        random_password(f)
+        try:
+            random_password(f)
+        except Exception as e:
+            print(f'{e}. try again.')
     else:
         random_password()
 
