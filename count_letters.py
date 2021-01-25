@@ -14,11 +14,20 @@ def letter_count(f):
                 if c in alpha:
                     alpha[c] += 1
                     count += 1
+    common= alpha.most_common(1)
     # printing
-    print(f'Analysis of {f}')
+    print(f'Analysis of {f.name}')
     print('Letter\tpercentage')
     for k,v in alpha.items():
-        print(f'{k}\t{v/count*100:.2f}')
-    print(f'\n...Most comman letter in this document is {alpha.most_common(1)}...')
+        print(f'{k}\t{v/count*100: >.2f}')
+    print(f'\nMost comman letter in this document is "{common [0][0].upper()}" with {common [0][1]} occurrences.')
+    
+def main():
+    try:
+        f = input("Please enter the file name: ")
+        letter_count(f)
+    except Exception as e:
+        print (f"failed to do the letter count. {e}")
         
-letter_count('gatsby.txt')
+if __name__ == "__main__":
+    main()
