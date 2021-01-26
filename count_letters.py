@@ -9,18 +9,21 @@ def letter_count(f):
     with open(f) as f:
         # reading word by word
         for word in f.read():
+            
+            letters = set(word.lower())
             # if letter is an alphabet add update the count
-            for c in word.lower():
+            for c in letters:
                 if c in alpha:
                     alpha[c] += 1
                     count += 1
-    common= alpha.most_common(1)
+    least_common= alpha.most_common()[-1]
+    #sorted_v = sorted([v,k for k,v in alpha.items()])
     # printing
     print(f'Analysis of {f.name}')
     print('Letter\tpercentage')
     for k,v in alpha.items():
         print(f'{k}\t{v/count*100: >.2f}')
-    print(f'\nMost comman letter in this document is "{common [0][0].upper()}" with {common [0][1]} occurrences.')
+    print(f'\nLeast comman letter in this document is "{least_common[0]}" with {least_common[1]} occurrences.')
     
 def main():
     try:
