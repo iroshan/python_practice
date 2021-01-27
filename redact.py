@@ -36,10 +36,10 @@ def redact_to_file(read_file, word_file, write_file):
         word_list = set(f.read().lower().split())
     with open(read_file,'r') as f:
         with open(write_file,'w') as r:
-            for line in f:
-                 for word in word_list:
-                     file_data = re.sub(word,'*'*len(word), line, flags= re.IGNORECASE)
-                     r.write(file_data)
+            file_data = f.read()
+            for word in word_list:
+                     file_data = re.sub(word,'*'*len(word), file_data, flags= re.IGNORECASE)
+            r.write(file_data,)
 
 
 def main():
