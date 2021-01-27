@@ -30,13 +30,27 @@ def redact_ignore_case(write_file, word_file):
             file_data = re.sub(word,'*'*len(word), file_data, flags= re.IGNORECASE)
             f.truncate(0)
             f.write(file_data)
-    
+
+def redact_to_file(read_file, word_file, write_file):
+    with open(word_file) as f:
+        word_list = set(f.read().lower().split())
+    with open(read_file,'r') as f:
+        with open(write_file,'w') as r:
+            for line in f:
+                 for word in word_list:
+                     file_data = re.sub(word,'*'*len(word), line, flags= re.IGNORECASE)
+                     r.write(file_data)
+
 
 def main():
     try:
         to_redact = input("enter file name to redact: ")
         words = input("enter the file name with the words to redact: ")
-        redact_ignore_case(to_redact, words)
+        write_file = input("enter a file name for redacted file. press enter to do in-place redaction: ")
+        if write_file:
+            redact_to_file(to_redact, words, write_file)
+        else:
+            redact_ignore_case(to_redact, words)
         print("redaction complete...")
     except Exception as e:
         print(f"error occured. \n{e}")
