@@ -2,6 +2,7 @@
 Coding Challenge: Day 43: Missing Comments
 '''
 
+import sys
 
 # search a file for functions without a comment before and print the line numbers and the function names.
 def missing_comments(f):
@@ -29,8 +30,12 @@ def missing_comments(f):
 
 def main():
     try:
-        file_name = input("Enter the file name to check for missing comments: ")
-        missing_comments(file_name)
+        if sys.argv[1]:
+            for arg in sys.arg[1:]:
+                missing_comments(arg)
+        else:
+            file_name = input("Enter the file name to check for missing comments: ")
+            missing_comments(file_name)
     except Exception as e:
         print(f'Error occured! \n {e}')
 
