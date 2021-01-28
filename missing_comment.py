@@ -20,7 +20,7 @@ def missing_comments(f):
                         missing += 1
                         # func = re.search('def\ (\S+)\:',line)[0]\
                         func = line.partition("def ")[2].partition(":")[0]
-                        print(f'Missing comment in {f.name} on line {i-1} for the function "{func}"')
+                        print(f'Missing comment in {f.name} on line {i+1} for the function "{func}"')
             if found and not missing:
                 print(f'Great! \nAll {found} functions in {f.name} are commented.')
             if not found:
