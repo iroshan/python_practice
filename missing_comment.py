@@ -30,8 +30,8 @@ def missing_comments(f):
 
 def main():
     try:
-        if sys.argv[1]:
-            for arg in sys.arg[1:]:
+        if len(sys.argv)>1:
+            for arg in sys.argv[1:]:
                 missing_comments(arg)
         else:
             file_name = input("Enter the file name to check for missing comments: ")
