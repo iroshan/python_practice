@@ -8,6 +8,8 @@ import sys
 def missing_comments(f):
     try:
         with open(f, 'r') as f:
+            print(f"checking file {f.name}")
+            print("*"*10)
             lines = f.readlines()
             found = 0
             missing = 0
@@ -23,6 +25,7 @@ def missing_comments(f):
                 print(f'Great! \nAll {found} functions in {f.name} are commented.')
             if not found:
                 print('no functions were detected')
+            print("*"*10)
     except Exception as e:
         print(e)
 
