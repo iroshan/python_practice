@@ -1,4 +1,4 @@
-def recursive_sum(n):
+def recursive_sum(n=0):
     ''' recursively add the input to n and print the total when the input is blank'''
     try:
         i = input('enter a number: ')
@@ -18,7 +18,7 @@ def recursive_sum(n):
 
 def main():
     print("SUM OF NUMBERS")
-    recursive_sum(0)
+    recursive_sum()
 
 if __name__ == '__main__':
     main()
