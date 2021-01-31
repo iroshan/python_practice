@@ -15,13 +15,13 @@ def edit_distance(s,t):
 
 def main():
     try:
-        s = input('enter the first word: ')
-        t = input('enter the second word: ')
+        s = input('Enter the first word: ')
+        t = input('Enter the second word: ')
         if s and t:
             dist = edit_distance(s,t)
             print(f'Edit distance between {s} and {t} is {dist}.')
         else:
-            print('cannot compaare empty words')
+            print('Cannot compare empty words')
     except Exception as e:
         print(e)
 
