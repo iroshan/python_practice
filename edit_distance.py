@@ -1,3 +1,7 @@
+from functools import lru_cache
+
+
+@lru_cache(maxsize=None)
 def edit_distance(s,t):
     if len(s) == 0:
         return len(t)
