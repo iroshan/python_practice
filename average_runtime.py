@@ -1,5 +1,5 @@
 def run_timing():
-    """ returns average of user inputs """
+    """ ask user to enter numeric inputs and print the average after a blank input """
     # make a total and count variables
     total, count = 0, 0
     while True:
