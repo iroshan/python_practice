@@ -1,5 +1,5 @@
 def pig_latin(word):
-  """ returns a sentence converted to pig latin.
+  """ returns a word converted to pig latin.
   capital letters, punctuations are not supported"""
   if word[0] in 'aeiou':
     return word+"way"
@@ -7,11 +7,12 @@ def pig_latin(word):
     return word[1:]+word[0]+'ay'
 
 def main():
-    """main program"""
+    """returns a word converted to pig latin.
+  capital letters, punctuations are not supported"""
     while True:
       sentence = input('Enter the sentence to translate to pig latin (blank to quit: ').strip()
       if not sentence:
-        print("not a sentence")
+        print("exiting...")
         break
       words = [pig_latin(word) for word in sentence.lower().split()]
       print(" ".join(words))
