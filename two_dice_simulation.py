@@ -1,5 +1,5 @@
-from random import randint
 from collections import Counter
+from random import randint
 
 
 def dice_role():

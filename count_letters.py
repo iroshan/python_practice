@@ -1,6 +1,9 @@
 import string
 from collections import Counter
+from decorators import timer, debug
 
+@timer
+@debug
 def letter_count(f):
     # create the dictionary with count zero
     alpha = Counter({k:0 for k in string.ascii_lowercase})

@@ -14,7 +14,7 @@ def sum_inputs():
             else:
                 total += s
         except ValueError:
-            print("Not a number...")
+            print(f"{s} is not a number...")
         print(f"Running total is {total}")
 
 
