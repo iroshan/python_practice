@@ -1,4 +1,4 @@
-def pl_sentence(word):
+def pig_latin(word):
   """ returns a sentence converted to pig latin.
   capital letters, punctuations are not supported"""
   if word[0] in 'aeiou':
@@ -13,7 +13,7 @@ def main():
       if not sentence:
         print("not a sentence")
         break
-      words = [pl_sentence(word) for word in sentence.lower().split()]
+      words = [pig_latin(word) for word in sentence.lower().split()]
       print(" ".join(words))
       
 if __name__ == "__main__" :
