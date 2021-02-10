@@ -1,4 +1,4 @@
-def pig_latin(word):
+def pig_latin(word: str) -> str:
     """ returns a sentence converted to pig latin.
     capital letters, punctuations are not supported"""
     if word[0] in 'aeiou':
@@ -11,7 +11,7 @@ def main():
     """main program"""
     while True:
         sentence = input(
-            'Enter the sentence to translate to pig latin (blank to quit: ').strip()
+            'Enter the sentence to translate to pig latin (blank to quit): ').strip()
         if not sentence:
             print("not a sentence")
             break
