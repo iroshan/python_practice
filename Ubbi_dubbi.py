@@ -5,7 +5,6 @@
 
 def translate(word: str) -> str:
     """ tanslate word to ubbi subbi"""
-    s.replace()
     s = [('ub' + c if c in 'aeiou' else c) for c in word]
     return ''.join(s)
     
