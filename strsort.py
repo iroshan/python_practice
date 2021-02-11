@@ -1,9 +1,5 @@
-def strsort_ignorecase(word):
-    """returns characters of the word sorted, ignoring case"""
-    return ''.join(sorted(word, key=lambda s: ord(s.lower())))
 
-
-def strsort(word):
+def strsort(word: str) -> str:
     """returns sorted word"""
     return "".join(sorted(word))
 
@@ -19,3 +15,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+# this is just for fun
+def strsort_ignorecase(word: str) -> str:
+    """returns characters of the word sorted, ignoring case"""
+    return ''.join(sorted(word, key=lambda s: ord(s.lower())))
